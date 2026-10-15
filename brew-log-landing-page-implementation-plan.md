@@ -29,13 +29,13 @@ Get a blank Vite+React+Tailwind project running that matches the app's exact dep
 
 Nothing downstream can be styled correctly until this lands, since every component references these.
 
-- [ ] Create `src/tokens.js` — copy the trimmed palette + font constants from SDD §5 (already corrected against the real `marooj_coffee/src/tokens.js` values).
-- [ ] Add `applyTokens()` call in `src/main.jsx`, called once before first render (same pattern as the app).
-- [ ] Copy the Google Fonts `<link>` block verbatim from `marooj_coffee/index.html` into this project's `index.html` (SDD §6) — same weights, same `preconnect` tags.
-- [ ] Build `src/index.css`: CSS custom properties consumed from the token vars, the paper-grain `feTurbulence` filter (SDD §9), base body background/foreground using `var(--paper)` / `var(--ink)`.
-- [ ] Spot-check contrast: `amber` (`#C77D2E`) and `green` (`#2F5233`) as text/icon color against `paper` (`#F3F1EC`) and `card` (`#FBFAF7`) — run through a contrast checker now, before any component is built on top of an inaccessible color pairing (SDD §15).
+- [x] Create `src/tokens.js` — copy the trimmed palette + font constants from SDD §5 (already corrected against the real `marooj_coffee/src/tokens.js` values).
+- [x] Add `applyTokens()` call in `src/main.jsx`, called once before first render (same pattern as the app).
+- [x] Copy the Google Fonts `<link>` block verbatim from `marooj_coffee/index.html` into this project's `index.html` (SDD §6) — same weights, same `preconnect` tags.
+- [x] Build `src/index.css`: CSS custom properties consumed from the token vars, the paper-grain `feTurbulence` filter (SDD §9), base body background/foreground using `var(--paper)` / `var(--ink)`.
+- [x] Spot-check contrast: `amber` (`#C77D2E`) and `green` (`#2F5233`) as text/icon color against `paper` (`#F3F1EC`) and `card` (`#FBFAF7`) — run through a contrast checker now, before any component is built on top of an inaccessible color pairing (SDD §15). **Result:** amber fails AA as text almost everywhere; restricted to `card` background + large/bold size only (see SDD §15, `.text-amber-accent` in `index.css`).
 
-**Acceptance:** A static test div rendered in all four palette colors, correct fonts loading, paper grain visible at low opacity, contrast check passed or color use adjusted.
+**Acceptance:** ✅ Verified via screenshot — all four palette colors render correctly, fonts load (Space Grotesk / Source Serif 4 / IBM Plex Mono), paper grain visible at low opacity, amber contrast issue found and resolved with a background+size rule.
 
 ## Phase 2 — Shell & navigation
 

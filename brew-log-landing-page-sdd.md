@@ -167,7 +167,7 @@ Target: static page, Lighthouse ~95+ across the board. Concretely:
 
 ## 15. Accessibility
 
-- Contrast: `ink` (`#201D1A`) on `paper` (`#F3F1EC`) is comfortably AA. `amber` (`#C77D2E`) and `green` (`#2F5233`) as text/icon colors on `paper`/`card` should be spot-checked against WCAG AA before launch — they're used for data signals and CTAs respectively, so they need to hold up as more than decoration.
+- **Contrast — checked (Phase 1 of the implementation plan).** `ink` (`#201D1A`) on `paper`/`card` is comfortably AA (14.86:1 / 16.07:1). `green` (`#2F5233`) is AA-safe as text on both backgrounds (7.83:1 / 8.47:1). `amber` (`#C77D2E`) fails almost everywhere as text: 2.91:1 on `paper` (fails even the 3:1 large-text minimum) and 3.14:1 on `card` (clears 3:1 only at large/bold size, still fails the 4.5:1 body-text minimum). Decision: keep the app's exact amber hex for brand consistency, but amber is text **only** on `card`, at large/bold size (≥24px, or ≥19px/600+ weight) — see `.text-amber-accent` in `index.css` and the comment in `tokens.js`. Everywhere else amber is icon fills, underlines, or borders, never text, and never on `paper`.
 - Accordion and hamburger menu must be keyboard-operable and expose `aria-expanded`.
 - All screenshots and the share-card image need real `alt` text (not filenames).
 

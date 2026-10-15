@@ -1,1 +1,57 @@
 @import "tailwindcss";
+
+/* Token values are published as these CSS vars at runtime by
+   tokens.js:applyTokens(), called once from main.jsx before first render. */
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Source Serif 4', serif;
+  position: relative;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+/* Section-band labels (A/B/C/D/E) and numeric/data labels use the mono face. */
+.font-mono-band {
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+/* Paper grain: a low-opacity feTurbulence noise layer over the flat paper
+   fill, so backgrounds read as paper rather than solid color blocks.
+   CSS-only — no image request, generated at paint time. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+}
+
+:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: 2px;
+}
+
+/* Amber text is only AA-safe on `card`, at large/bold size — see the
+   contrast note in tokens.js. Never use amber as text color on `paper`. */
+.text-amber-accent {
+  color: var(--amber);
+  background: var(--card);
+  font-weight: 600;
+  font-size: 1.25rem;
+}
