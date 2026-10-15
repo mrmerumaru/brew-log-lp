@@ -39,12 +39,12 @@ Nothing downstream can be styled correctly until this lands, since every compone
 
 ## Phase 2 — Shell & navigation
 
-- [ ] `src/App.jsx` — assembles section components in order, currently as empty placeholders.
-- [ ] `src/useScrollNav.js` — scroll listener hook, boolean past a threshold (SDD §8).
-- [ ] `src/Nav.jsx` — logo + wordmark left, nav links + CTA right, collapses to hamburger under 640px, compacts on scroll via the hook.
-- [ ] `src/Footer.jsx` — three columns per PRD §4.2.7, stacked on mobile.
+- [x] `src/App.jsx` — assembles section components in order, currently as empty placeholders.
+- [x] `src/useScrollNav.js` — scroll listener hook, boolean past a threshold (SDD §8).
+- [x] `src/Nav.jsx` — logo + wordmark left, nav links + CTA right, collapses to hamburger under 640px, compacts on scroll via the hook.
+- [x] `src/Footer.jsx` — three columns per PRD §4.2.7, stacked on mobile.
 
-**Acceptance:** Nav and footer render and behave correctly in isolation (scroll compaction, mobile hamburger) with placeholder links.
+**Acceptance:** ✅ Verified via Playwright-driven screenshots (desktop + mobile, 375px and 1280px viewports): nav compacts and gains a bottom rule past the scroll threshold, anchor links smooth-scroll, hamburger opens/closes correctly on mobile, footer stacks to one column on mobile, zero console errors. Logo pulled forward from Phase 3 (cropped/resized to 256px, 11.7KB) since Nav needed it now; Phase 3's asset list updated accordingly. Footer links resolved where PRD had already settled the URL (app, GitHub repo, issues); Instagram/email remain explicit "(TBD)" placeholders per PRD §9 — not stubbed with fake values.
 
 ## Phase 3 — Capture real assets [BLOCKING]
 
@@ -53,7 +53,7 @@ The PRD is explicit that screenshots and the share card must be real app output,
 - [ ] Log into the live app (`brew-log-xi.vercel.app`), capture one real share card (Post aspect, ~1080×1350).
 - [ ] Capture four screenshots, one per "How it works" step (Sign in / Log a brew / Attach a photo / Look back or share).
 - [ ] Resize/compress all of the above manually (SDD §10 — no build-time image pipeline), drop into `public/images/` and `public/images/screenshots/`.
-- [ ] Copy `image/logo.jpeg` from `marooj_coffee` into `public/images/logo.jpeg`.
+- [x] Copy `image/logo.jpeg` from `marooj_coffee` into `public/images/logo.jpg` — done early in Phase 2 since Nav needed it; cropped to the square badge and downscaled to 256px (11.7KB).
 
 **Acceptance:** All image assets referenced by later components physically exist in `public/images/` at reasonable file sizes (hero/share card < ~300KB, screenshots < ~150KB each).
 
