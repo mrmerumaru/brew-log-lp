@@ -182,7 +182,7 @@ Bottom bar (full width, below the three columns): small print — "Made with Rea
 
 Pull from the existing app's design language so the page feels like the same product:
 
-- **Palette:** cream paper `#F3F1EC` background, ink `#1A1715` foreground, amber `#C99A48` for measurement / data signals, green `#4A7C59` for actionable elements (CTAs). Values from `marooj_coffee/src/tokens.js`.
+- **Palette:** cream paper `#F3F1EC` background, ink `#201D1A` foreground, amber `#C77D2E` for measurement / data signals, green `#2F5233` for actionable elements (CTAs). Values from `marooj_coffee/src/tokens.js`.
 - **Type:** Space Grotesk (headings), Source Serif 4 (body), IBM Plex Mono (the A/B/C section bands and any numeric labels).
 - **Section bands:** the lettered bands (A, B, C, D, E) are a callback to the form section bands inside the app. Same rules: ruled, mono, accent the first letter.
 - **Paper tooth:** the same `feTurbulence` grain at low opacity over flat fills, so surfaces read as paper rather than as solid colour blocks. CSS only — generated at build, no image request.
@@ -219,16 +219,16 @@ This is the right call **if** the page stays at this scope. If a blog or changel
 
 ### Deployment
 
-- New repo (working name TBD — `brew-log-site`, `brew-log-landing`, `marooj_coffee-site`).
+- Repo: `brew-log-lp` (resolved — `https://github.com/mrmerumaru/brew-log-lp`).
 - Vercel project, same account.
 - Custom domain: **not** required at launch. The default `vercel.app` alias is fine. A custom domain is only worth buying if/when the app itself gets one (see §9).
 
 ##  9. Open Questions
 
 - **Custom domain.** Same trade-off as the app: a custom domain is required for some OAuth setups and for Google Search Console verification, but the current audience is small enough that a `vercel.app` alias is acceptable. Revisit if/when the audience widens.
-- **GitHub repo URL.** Needs the actual repo path before launch.
+- **GitHub repo URL.** Resolved: `https://github.com/mrmerumaru/brew-log.git` (the app repo; this landing page lives at `https://github.com/mrmerumaru/brew-log-lp`).
 - **Instagram handle.** TBD — see footer placeholder.
-- **GitHub / contact email.** These need values before the contact section goes live.
+- **Contact email.** Needs a value before the contact section goes live.
 - **FAQ: 8 vs 10 questions.** Recommend 8 to start; revisit when real questions come in via DMs.
 - **Contact form vs email link.** Recommend email link. A form adds a backend dependency for a static site; the audience is small enough that direct email is fine.
 
