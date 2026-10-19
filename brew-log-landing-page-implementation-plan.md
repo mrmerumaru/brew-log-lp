@@ -61,15 +61,15 @@ The PRD is explicit that screenshots and the share card must be real app output,
 
 Build in this order — each is independent of the others, but this order matches the page's reading order and lets you sanity-check the design system against increasingly complex layouts:
 
-- [ ] `src/Hero.jsx` — verbatim README copy (PRD §4.2.1), two buttons, share-card image in a CSS phone frame.
-- [ ] `src/SectionBand.jsx` — shared lettered-band component (A–E), built once here since Hero doesn't use it but WhatWhy does next.
-- [ ] `src/WhatWhy.jsx` — band A, two paragraphs + 3-up sub-points (PRD §4.2.2).
-- [ ] `src/Features.jsx` — band B, 6 cards with lucide icons, 3×2 → 1-col grid (PRD §4.2.3).
-- [ ] `src/HowItWorks.jsx` — band C, 5 steps with the real screenshots from Phase 3 (PRD §4.2.4).
-- [ ] `src/Install.jsx` — band D, two static platform columns, no device detection (PRD §4.2.5).
-- [ ] `src/Faq.jsx` — band E, accordion with single-open-at-a-time `openIndex` state (PRD §4.2.6, SDD §8). Use the 8-question version per the PRD's own recommendation — don't build for 10 and trim later.
+- [x] `src/Hero.jsx` — verbatim README copy (PRD §4.2.1), two buttons, share-card image in a CSS phone frame.
+- [x] `src/SectionBand.jsx` — shared lettered-band component (A–E), built once here since Hero doesn't use it but WhatWhy does next. Reuses the app's own "[A] DRINK" boxed-letter motif (visible in the real screenshots), with amber as the border only — never the text — per the Phase 1 contrast constraint.
+- [x] `src/WhatWhy.jsx` — band A, two paragraphs + 3-up sub-points (PRD §4.2.2). Paragraph copy is draft, written in the app's voice since the PRD only gave notes, not verbatim text — flagged in a code comment for revision.
+- [x] `src/Features.jsx` — band B, 6 cards with lucide icons, 3×2 → 1-col grid (PRD §4.2.3).
+- [x] `src/HowItWorks.jsx` — band C, 5 steps with the real screenshots from Phase 3 (PRD §4.2.4), numbered with the same boxed-letter motif as SectionBand.
+- [x] `src/Install.jsx` — band D, two static platform columns, no device detection (PRD §4.2.5).
+- [x] `src/Faq.jsx` — band E, accordion with single-open-at-a-time `openIndex` state (PRD §4.2.6, SDD §8). Used the 8-question version per the PRD's own recommendation (dropped the never-written item 7 and the "I found a bug" item, which already lives in the Footer's "Report a bug" link) — renumbered 1–8.
 
-**Acceptance:** Full page scrolls top-to-bottom with real content and assets, no lorem ipsum, no placeholder images.
+**Acceptance:** ✅ Verified via Playwright-driven screenshots at 375px and 1280px: full page scrolls top-to-bottom with real content and real assets (no lorem ipsum, no placeholder images), accordion single-open-at-a-time behavior confirmed by opening one item then another, zero console errors on either viewport.
 
 ## Phase 5 — Responsive pass
 
