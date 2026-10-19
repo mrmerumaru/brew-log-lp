@@ -107,7 +107,7 @@ Direct 1:1 mapping, each PRD section (§4.2) is one component:
 | `Hero.jsx` | §4.2.1 | Verbatim README copy; share-card image in a CSS-only phone frame (no image-manipulation lib) |
 | `WhatWhy.jsx` | §4.2.2 | Band A; static prose + 3-up sub-points |
 | `Features.jsx` | §4.2.3 | Band B; 6 cards, CSS grid (3×2 → 1-col via Tailwind breakpoints) |
-| `HowItWorks.jsx` | §4.2.4 | Band C; 4 steps, real screenshots from `public/images/screenshots/` |
+| `HowItWorks.jsx` | §4.2.4 | Band C; 5 steps (Sign in / Log a brew / Attach a photo / Look back / Share it), real screenshots from `public/images/screenshots/` |
 | `Install.jsx` | §4.2.5 | Band D; two static columns, no platform detection — both shown always |
 | `Faq.jsx` | §4.2.6 | Band E; accordion, single-open-at-a-time per PRD §4.2.6 |
 | `Footer.jsx` | §4.2.7 | 3-column desktop / stacked mobile |

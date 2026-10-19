@@ -51,11 +51,13 @@ Nothing downstream can be styled correctly until this lands, since every compone
 The PRD is explicit that screenshots and the share card must be real app output, not mockups (PRD §4.2.4). Nothing in Phase 4 can be finalized without these.
 
 - [ ] Log into the live app (`brew-log-xi.vercel.app`), capture one real share card (Post aspect, ~1080×1350).
-- [ ] Capture four screenshots, one per "How it works" step (Sign in / Log a brew / Attach a photo / Look back or share).
-- [ ] Resize/compress all of the above manually (SDD §10 — no build-time image pipeline), drop into `public/images/` and `public/images/screenshots/`.
+- [x] Capture five screenshots, one per "How it works" step (Sign in / Log a brew / Attach a photo / Look back / Share it — step 4 split into two once real screenshots showed History and the Share sheet deserved separate steps; PRD §4.2.4 updated accordingly).
+- [x] Resize/compress the five screenshots manually (SDD §10 — no build-time image pipeline), dropped into `public/images/screenshots/` (28–92KB each, all under the 150KB budget).
 - [x] Copy `image/logo.jpeg` from `marooj_coffee` into `public/images/logo.jpg` — done early in Phase 2 since Nav needed it; cropped to the square badge and downscaled to 256px (11.7KB).
 
-**Acceptance:** All image assets referenced by later components physically exist in `public/images/` at reasonable file sizes (hero/share card < ~300KB, screenshots < ~150KB each).
+**Acceptance:** Partial — the five step screenshots are in `public/images/screenshots/` at reasonable sizes. **Still open:** the real exported share-card image (not a screenshot of the Share editor modal) for the Hero and OG meta tag — see note below.
+
+**Note on the share card:** `05-share.png` captures the Share *editor* screen (zoom slider, "Share this card" button, modal chrome) — useful as the step 5 screenshot, but not the same thing as the actual exported card. The PRD (§4.2.1) and SDD (§11) both call for the finished ~1080×1350 card itself, with no editor UI around it, for the Hero image and social meta tags. That capture is still needed before Phase 4's Hero component can be finalized.
 
 ## Phase 4 — Content sections
 
@@ -65,7 +67,7 @@ Build in this order — each is independent of the others, but this order matche
 - [ ] `src/SectionBand.jsx` — shared lettered-band component (A–E), built once here since Hero doesn't use it but WhatWhy does next.
 - [ ] `src/WhatWhy.jsx` — band A, two paragraphs + 3-up sub-points (PRD §4.2.2).
 - [ ] `src/Features.jsx` — band B, 6 cards with lucide icons, 3×2 → 1-col grid (PRD §4.2.3).
-- [ ] `src/HowItWorks.jsx` — band C, 4 steps with the real screenshots from Phase 3 (PRD §4.2.4).
+- [ ] `src/HowItWorks.jsx` — band C, 5 steps with the real screenshots from Phase 3 (PRD §4.2.4).
 - [ ] `src/Install.jsx` — band D, two static platform columns, no device detection (PRD §4.2.5).
 - [ ] `src/Faq.jsx` — band E, accordion with single-open-at-a-time `openIndex` state (PRD §4.2.6, SDD §8). Use the 8-question version per the PRD's own recommendation — don't build for 10 and trim later.
 

@@ -2,3 +2,7 @@ node_modules
 dist
 .DS_Store
 *.local
+
+# Unprocessed capture drop zone (Phase 3) — raw screenshots/share-card land
+# here before being resized/compressed into public/images/.
+raw-assets

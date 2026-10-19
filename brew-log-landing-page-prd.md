@@ -103,14 +103,17 @@ Six cards in a 3×2 grid on desktop, single column on mobile. Each card has an i
 
 #### 4.2.4 How it works (band C)
 
-Four numbered steps, each with a screenshot from the relevant tab. Source: actual app screenshots, not mockups — the visual language must match what the user will see on their phone.
+Five numbered steps, each with a screenshot from the relevant tab. Source: actual app screenshots, not mockups — the visual language must match what the user will see on their phone.
 
 1. **Sign in.** Google only. Your brews are scoped to your account from the first row.
 2. **Log a brew.** Fill the fields, hit Save. Under 60 seconds once you've done it twice.
 3. **Attach a photo.** Pick the cup photo in the same flow. It rides along with the row.
-4. **Look back or share.** Find it in History, repeat it, or post the share card.
+4. **Look back.** Every brew lands in History — filter by method, bean or rating to compare.
+5. **Share it.** Generate the share card and post it to Instagram.
 
-Beneath the four steps, one line: *"Setups carry forward. Tasting notes, ratings and photos don't — every cup is logged on its own terms."*
+*(Originally scoped as four steps with a combined "Look back or share" — split into two once real screenshots showed History and the Share sheet are distinct enough screens to deserve their own step.)*
+
+Beneath the five steps, one line: *"Setups carry forward. Tasting notes, ratings and photos don't — every cup is logged on its own terms."*
 
 #### 4.2.5 Install (band D)
 
