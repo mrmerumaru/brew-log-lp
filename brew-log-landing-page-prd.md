@@ -74,7 +74,7 @@ On scroll, the nav becomes a thin translucent bar with the same content.
 - Headline: **"A coffee consistency tracker."** (one line, large)
 - Subhead: **"Log every variable of a brew, attach a photo of the cup, and look back at what produced your best results."**
 - Two buttons: **Open the app** (primary, links to the live app) · **How it works** (secondary, smooth-scrolls to section C).
-- Right side: a single, large share-card image (real output from the app, ~1080×1350, set in a phone-shaped frame with a subtle drop shadow).
+- Right side: a single, large share-card image (real output from the app, Story aspect ~1080×1920, set in a phone-shaped frame with a subtle drop shadow — the taller aspect reads more convincingly as a phone screen than the Post crop would).
 
 The hero copy is taken verbatim from the README's opening — that's the wording the app's voice has already committed to.
 
@@ -109,7 +109,7 @@ Five numbered steps, each with a screenshot from the relevant tab. Source: actua
 2. **Log a brew.** Fill the fields, hit Save. Under 60 seconds once you've done it twice.
 3. **Attach a photo.** Pick the cup photo in the same flow. It rides along with the row.
 4. **Look back.** Every brew lands in History — filter by method, bean or rating to compare.
-5. **Share it.** Generate the share card and post it to Instagram.
+5. **Share it.** Illustrated with the exported share card itself (the same image used in the Hero) rather than a screenshot of the Share editor screen — showing the output is a more honest answer to "what does sharing produce?" than the editor chrome would be.
 
 *(Originally scoped as four steps with a combined "Look back or share" — split into two once real screenshots showed History and the Share sheet are distinct enough screens to deserve their own step.)*
 

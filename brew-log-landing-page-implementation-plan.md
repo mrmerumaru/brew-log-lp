@@ -50,14 +50,12 @@ Nothing downstream can be styled correctly until this lands, since every compone
 
 The PRD is explicit that screenshots and the share card must be real app output, not mockups (PRD §4.2.4). Nothing in Phase 4 can be finalized without these.
 
-- [ ] Log into the live app (`brew-log-xi.vercel.app`), capture one real share card (Post aspect, ~1080×1350).
+- [x] Capture one real share card. Actual export turned out to be Story aspect (899×1599, ≈1080×1920), not the originally-planned Post aspect (1080×1350) — kept as-is and updated PRD §4.2.1 to match, since the taller aspect suits a phone-frame treatment better anyway.
 - [x] Capture five screenshots, one per "How it works" step (Sign in / Log a brew / Attach a photo / Look back / Share it — step 4 split into two once real screenshots showed History and the Share sheet deserved separate steps; PRD §4.2.4 updated accordingly).
 - [x] Resize/compress the five screenshots manually (SDD §10 — no build-time image pipeline), dropped into `public/images/screenshots/` (28–92KB each, all under the 150KB budget).
 - [x] Copy `image/logo.jpeg` from `marooj_coffee` into `public/images/logo.jpg` — done early in Phase 2 since Nav needed it; cropped to the square badge and downscaled to 256px (11.7KB).
 
-**Acceptance:** Partial — the five step screenshots are in `public/images/screenshots/` at reasonable sizes. **Still open:** the real exported share-card image (not a screenshot of the Share editor modal) for the Hero and OG meta tag — see note below.
-
-**Note on the share card:** `05-share.png` captures the Share *editor* screen (zoom slider, "Share this card" button, modal chrome) — useful as the step 5 screenshot, but not the same thing as the actual exported card. The PRD (§4.2.1) and SDD (§11) both call for the finished ~1080×1350 card itself, with no editor UI around it, for the Hero image and social meta tags. That capture is still needed before Phase 4's Hero component can be finalized.
+**Acceptance:** ✅ All image assets exist. `public/images/share-card.png` is the clean exported card (104KB, Story aspect) used for the Hero and OG meta tag. `public/images/screenshots/05-share.png` is the same card image, resized to match the other four screenshots (96KB) — reused per user decision rather than a dedicated Share-editor screenshot, since showing the output is a more honest answer to "what does sharing produce?" than the editor chrome.
 
 ## Phase 4 — Content sections
 
