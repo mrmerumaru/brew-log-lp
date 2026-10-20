@@ -73,11 +73,11 @@ Build in this order — each is independent of the others, but this order matche
 
 ## Phase 5 — Responsive pass
 
-- [ ] QA at all three PRD breakpoints (§6.3): <640 (mobile), 640–1024 (tablet), ≥1024 (desktop).
-- [ ] Verify: hero stacking order on mobile, feature grid column count at each breakpoint, nav hamburger behavior, footer column stacking.
-- [ ] Keyboard-only pass: tab through nav, accordion, and footer links; confirm the accordion exposes `aria-expanded` and is operable without a mouse (SDD §15).
+- [x] QA at all three PRD breakpoints (§6.3): <640 (mobile), 640–1024 (tablet), ≥1024 (desktop).
+- [x] Verify: hero stacking order on mobile, feature grid column count at each breakpoint, nav hamburger behavior, footer column stacking.
+- [x] Keyboard-only pass: tab through nav, accordion, and footer links; confirm the accordion exposes `aria-expanded` and is operable without a mouse (SDD §15).
 
-**Acceptance:** No horizontal scroll or broken layout at any breakpoint; full page navigable by keyboard alone.
+**Acceptance:** ✅ Verified programmatically (`document.documentElement.scrollWidth` vs `clientWidth`) at 375px/768px/1280px — zero horizontal overflow at any breakpoint. Hero confirmed single-column until exactly the `lg` (1024px) breakpoint, 2-column feature grid at tablet, full-page tablet screenshot clean end-to-end. Keyboard pass: tab order through Nav is logical (logo → links → CTA → Hero buttons), FAQ accordion toggles `aria-expanded` via Enter, mobile hamburger toggles `aria-expanded` and its own `aria-label` (Open→Close) via Enter and tabbing continues into the revealed menu, `:focus-visible` ring clearly visible on every interactive element tested.
 
 ## Phase 6 — SEO & meta
 
