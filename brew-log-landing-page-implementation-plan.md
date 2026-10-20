@@ -81,12 +81,14 @@ Build in this order — each is independent of the others, but this order matche
 
 ## Phase 6 — SEO & meta
 
-- [ ] `<title>` and meta description matching hero copy (SDD §11).
-- [ ] Open Graph + Twitter card tags, `og:image` pointing at the real share-card image from Phase 3.
-- [ ] Favicon + apple-touch-icon, reused from `marooj_coffee/public/` (single set, no dev/prod split — SDD §11).
-- [ ] `rel="canonical"` — **only if** the custom-domain question (PRD §9) has been resolved by this point; otherwise point it at the `vercel.app` alias and revisit.
+- [x] `<title>` and meta description matching hero copy (SDD §11).
+- [x] Open Graph + Twitter card tags, `og:image` pointing at the real share-card image from Phase 3.
+- [x] Favicon + apple-touch-icon, reused from `marooj_coffee/public/` (single set, no dev/prod split — SDD §11).
+- [x] `rel="canonical"` — custom domain (PRD §9) is still unresolved, so pointed at `https://brew-log-lp.vercel.app/` (the Vercel default naming convention for this project) as a placeholder.
 
-**Acceptance:** Sharing the deployed preview URL in Slack/iMessage renders a proper link preview with the share-card image.
+**Acceptance:** Partial — verified what's testable pre-deploy: title, meta description, and all OG/Twitter/canonical tags render correctly in the compiled HTML; favicon and apple-touch-icon both resolve (200, `image/png`); zero console errors. **Not yet verifiable:** the actual social-preview rendering (Slack/iMessage/Twitter card), since that needs a real deployed URL — Phase 8 hasn't run yet. Two follow-ups once deployed:
+1. Confirm `brew-log-lp.vercel.app` is the actual assigned URL (Vercel appends a suffix if the name's taken) and update the three absolute URLs in `index.html` (`og:image`, `og:url`, `twitter:image`) plus `rel="canonical"` if it differs, or once a custom domain is decided.
+2. The share card is a tall Story-aspect image (≈9:16). Most link-preview surfaces (Slack, iMessage, Twitter's `summary_large_image`) are tuned for landscape (~1.91:1) and will crop or letterbox a portrait image rather than show it cleanly. Worth an actual preview check post-deploy — if it looks bad, the fallback is a square or landscape crop of the card specifically for `og:image`, separate from the Hero's phone-frame asset.
 
 ## Phase 7 — Content placeholders → real values
 

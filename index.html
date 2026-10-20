@@ -3,7 +3,40 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Brew Log</title>
+    <title>Brew Log — A coffee consistency tracker.</title>
+    <meta
+      name="description"
+      content="Log every variable of a brew, attach a photo of the cup, and look back at what produced your best results."
+    />
+
+    <!--
+      og:url / og:image / twitter:image use brew-log-lp.vercel.app as a
+      placeholder — this is the Vercel default naming convention for a
+      project named "brew-log-lp" (PRD §9/SDD §13), but it isn't confirmed
+      until Phase 8's actual deploy. Update these three absolute URLs (and
+      rel="canonical" below) once the real deployed URL is known, whether
+      that's this default alias or a custom domain.
+    -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Brew Log — A coffee consistency tracker." />
+    <meta
+      property="og:description"
+      content="Log every variable of a brew, attach a photo of the cup, and look back at what produced your best results."
+    />
+    <meta property="og:image" content="https://brew-log-lp.vercel.app/images/share-card.png" />
+    <meta property="og:url" content="https://brew-log-lp.vercel.app/" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Brew Log — A coffee consistency tracker." />
+    <meta
+      name="twitter:description"
+      content="Log every variable of a brew, attach a photo of the cup, and look back at what produced your best results."
+    />
+    <meta name="twitter:image" content="https://brew-log-lp.vercel.app/images/share-card.png" />
+
+    <link rel="canonical" href="https://brew-log-lp.vercel.app/" />
+    <link rel="icon" href="/favicon-32.png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
