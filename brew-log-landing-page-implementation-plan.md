@@ -94,11 +94,11 @@ Build in this order — each is independent of the others, but this order matche
 
 Close out everything the PRD and SDD left as TBD:
 
-- [ ] Instagram handle (PRD §9, footer placeholder).
-- [ ] Contact email (PRD §9, footer + FAQ item 10).
-- [ ] Confirm GitHub links in the footer point to `github.com/mrmerumaru/brew-log` (app repo) and/or `brew-log-lp` (this repo) as intended — PRD §9 resolved the URL but the footer copy itself still needs the right link wired to the right repo.
+- [x] Instagram handle (PRD §9, footer placeholder) — `theonebrewlog`.
+- [x] Contact email (PRD §9, footer) — `theonebrewlog@gmail.com`. (FAQ item 10 doesn't apply — it was dropped in Phase 4 when the FAQ was trimmed to 8 questions; the bug-report flow lives only in the Footer now.)
+- [x] Confirmed GitHub links point to `github.com/mrmerumaru/brew-log` (the app repo), not this landing-page repo — both "GitHub repo" and "Report a bug" are about the product a visitor came here to learn about, not the marketing site's own source. Matches how product landing pages conventionally link out.
 
-**Acceptance:** No "TBD," "placeholder," or lorem text remains anywhere in rendered output.
+**Acceptance:** ✅ `grep`'d the full source for "TBD"/"lorem"/"placeholder" — the only hit is a code comment (Phase 6's domain-placeholder note), nothing in rendered output. Verified all 5 footer links resolve to the correct hrefs via Playwright, zero console errors.
 
 ## Phase 8 — Deploy
 

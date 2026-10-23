@@ -230,9 +230,9 @@ This is the right call **if** the page stays at this scope. If a blog or changel
 
 - **Custom domain.** Same trade-off as the app: a custom domain is required for some OAuth setups and for Google Search Console verification, but the current audience is small enough that a `vercel.app` alias is acceptable. Revisit if/when the audience widens.
 - **GitHub repo URL.** Resolved: `https://github.com/mrmerumaru/brew-log.git` (the app repo; this landing page lives at `https://github.com/mrmerumaru/brew-log-lp`).
-- **Instagram handle.** TBD — see footer placeholder.
-- **Contact email.** Needs a value before the contact section goes live.
-- **FAQ: 8 vs 10 questions.** Recommend 8 to start; revisit when real questions come in via DMs.
+- **Instagram handle.** Resolved: `theonebrewlog`.
+- **Contact email.** Resolved: `theonebrewlog@gmail.com`.
+- **FAQ: 8 vs 10 questions.** Resolved: built at 8 (see §4.2.6).
 - **Contact form vs email link.** Recommend email link. A form adds a backend dependency for a static site; the audience is small enough that direct email is fine.
 
 ---

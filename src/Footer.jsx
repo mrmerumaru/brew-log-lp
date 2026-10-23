@@ -1,10 +1,7 @@
 const APP_URL = 'https://brew-log-xi.vercel.app/'
 const GITHUB_APP_REPO = 'https://github.com/mrmerumaru/brew-log'
-
-// Instagram handle and contact email are still open per PRD §9 — placeholders
-// until those are filled in (implementation plan Phase 7).
-const INSTAGRAM_HANDLE = null
-const CONTACT_EMAIL = null
+const INSTAGRAM_HANDLE = 'theonebrewlog'
+const CONTACT_EMAIL = 'theonebrewlog@gmail.com'
 
 export default function Footer() {
   return (
@@ -39,18 +36,10 @@ export default function Footer() {
           <p className="font-semibold mb-2">Find me</p>
           <ul className="flex flex-col gap-2 text-sm">
             <li>
-              {INSTAGRAM_HANDLE ? (
-                <a href={`https://instagram.com/${INSTAGRAM_HANDLE}`}>@{INSTAGRAM_HANDLE}</a>
-              ) : (
-                <span style={{ color: 'var(--ink-faint)' }}>Instagram (TBD)</span>
-              )}
+              <a href={`https://instagram.com/${INSTAGRAM_HANDLE}`}>@{INSTAGRAM_HANDLE}</a>
             </li>
             <li>
-              {CONTACT_EMAIL ? (
-                <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
-              ) : (
-                <span style={{ color: 'var(--ink-faint)' }}>Email (TBD)</span>
-              )}
+              <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
             </li>
           </ul>
         </div>
