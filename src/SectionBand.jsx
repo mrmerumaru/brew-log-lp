@@ -11,12 +11,12 @@ export default function SectionBand({ letter, label }) {
       >
         {letter}
       </span>
-      <span
-        className="font-mono-band text-sm uppercase tracking-wide"
+      <h2
+        className="font-mono-band text-sm font-normal uppercase tracking-wide"
         style={{ color: 'var(--ink-faint)' }}
       >
         {label}
-      </span>
+      </h2>
       <span className="h-px flex-1" style={{ background: 'var(--rule)' }} />
     </div>
   )
