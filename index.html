@@ -35,6 +35,14 @@
     <link rel="icon" href="/favicon-32.png" sizes="32x32" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
+    <!--
+      Preload the Hero's LCP image. This is a pure client-rendered SPA, so
+      without this the browser can't discover the <img src> until the JS
+      bundle has downloaded, parsed and run React — a Lighthouse audit
+      (lcp-discovery-insight) measured that delay at over a second.
+    -->
+    <link rel="preload" as="image" href="/images/share-card-hero.png" fetchpriority="high" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link

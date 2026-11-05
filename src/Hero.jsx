@@ -41,11 +41,12 @@ export default function Hero() {
             }}
           >
             <img
-              src="/images/share-card.png"
+              src="/images/share-card-hero.png"
               alt="A Brew Log share card for a hot latte, showing the method, beans, ratio, dose, temperature, time, and a 4-star rating"
               className="block h-auto w-full"
-              width={899}
-              height={1599}
+              width={337}
+              height={600}
+              fetchPriority="high"
             />
           </div>
         </div>
