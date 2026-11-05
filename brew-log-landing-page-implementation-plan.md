@@ -102,11 +102,16 @@ Close out everything the PRD and SDD left as TBD:
 
 ## Phase 8 — Deploy
 
-- [ ] Create new Vercel project, link to `github.com/mrmerumaru/brew-log-lp`, same account as the app (PRD §7, SDD §13).
-- [ ] Confirm `main` → production, other branches/PRs → preview deploys, no env vars configured (SDD §13 — there's nothing to configure).
-- [ ] Run one Lighthouse pass against the production deploy (SDD §16) — target ~95+ across categories; fix anything that regresses below that before calling it launched.
+- [x] Created Vercel project, linked to `github.com/mrmerumaru/brew-log-lp`, under the `brew-log` team — confirmed it's the same team the app itself uses (its `brew-log-xi.vercel.app` alias shows up under the same scope). Project auto-named `brew_log_lp` from the local folder; renamed to `brew-log-lp` to match the repo.
+- [x] Confirmed `main` → production: `vercel link` auto-connected the GitHub repo, and a plain `git push` (no CLI deploy command) triggered a new production deployment on its own — verified the pipeline actually works, not just configured.
+- [x] Production URL: **https://brewloglp.vercel.app** (Vercel strips hyphens from the project name for the short alias — not what either of us guessed in Phase 6, corrected there).
+- [x] Ran Lighthouse against the live production deploy (SDD §16). First pass: Performance 76 / Accessibility 98 / Best Practices 100 / SEO 100. Found and fixed two real issues:
+  - **LCP discovery delay (biggest issue):** pure client-rendered SPA means the browser couldn't discover the Hero's `<img>` until the JS bundle downloaded/parsed/ran — over a second of pure delay. Fixed with `<link rel="preload" as="image" fetchpriority="high">` + `fetchPriority="high"` on the `<img>`, plus a right-sized 337×600 hero-specific image (44KB) instead of reusing the full 899×1599 share card (104KB) that the Hero never displays above 280px wide.
+  - **Render-blocking Google Fonts:** switched to the standard preload + `media="print"`/`onload` async pattern (deliberately diverging from `marooj_coffee`'s plain blocking `<link>`, since this page is LCP-sensitive in a way the authenticated app isn't).
+  - **Heading order (accessibility):** `SectionBand`'s label was a `<span>`, so pages jumped `<h1>` → `<h3>` with no `<h2>`. Changed to a real `<h2>` (no visual change — `.font-mono-band`'s class specificity still wins over the generic `h1-h6` rule).
+  - Result after fixes: Accessibility 100, Best Practices 100, SEO 100 — consistently. **Performance is noisy on repeat runs (95, 88, 84 across three successive runs with zero code changes between them)** — LCP swung 2.6s–4.4s run to run. This is measurement variance from testing a remote URL off this shared local machine (network jitter, Vercel cold-start, CPU contention with Lighthouse's throttling simulation), not a real regression. All the fixes applied are architecturally sound and verifiable (preload tags present, image sizes correct, heading order correct); the noisy number itself just isn't trustworthy from this environment. **Recommend**: spot-check via Google's hosted [PageSpeed Insights](https://pagespeed.web.dev/) (runs from Google's own lab infrastructure, far less noisy) if a reliable performance number matters before calling this done.
 
-**Acceptance:** Production URL live, Lighthouse pass done, no console errors on load.
+**Acceptance:** Production URL live and publicly accessible (no auth wall — confirmed the per-deployment URLs have Vercel's default SSO protection, but the stable production alias does not). Zero console errors on load (checked via Playwright on every deploy). Lighthouse: 3/4 categories solidly at 100; performance improved substantially (76 → mid-80s/90s) via real fixes, though the exact number is noisy from this test environment — see note above.
 
 ## Phase 9 — Launch
 
