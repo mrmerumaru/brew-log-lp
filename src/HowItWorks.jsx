@@ -11,7 +11,7 @@ const STEPS = [
     title: 'Log a brew',
     description: "Fill the fields, hit Save. Under 60 seconds once you've done it twice.",
     image: '/images/screenshots/02-log-a-brew.png',
-    alt: 'Brew Log form with drink and method fields, Espresso selected',
+    alt: 'Brew Log form with drink and method fields, Latte selected',
   },
   {
     title: 'Attach a photo',
