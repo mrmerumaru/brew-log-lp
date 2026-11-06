@@ -44,7 +44,7 @@ export default function Faq() {
   const [openIndex, setOpenIndex] = useState(null)
 
   return (
-    <section id="faq" className="mx-auto max-w-5xl px-4 py-16">
+    <section id="faq" className="mx-auto max-w-6xl px-4 py-16">
       <SectionBand letter="E" label="FAQ" />
 
       <div style={{ borderTop: '1px solid var(--rule)' }}>
@@ -63,6 +63,7 @@ export default function Faq() {
                   size={18}
                   className="shrink-0"
                   style={{
+                    color: 'var(--accent)',
                     transform: isOpen ? 'rotate(180deg)' : 'none',
                     transition: 'transform 150ms',
                   }}

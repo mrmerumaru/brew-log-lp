@@ -10,7 +10,7 @@ const SUB_POINTS = [
 
 export default function WhatWhy() {
   return (
-    <section id="what-why" className="mx-auto max-w-5xl px-4 py-16">
+    <section id="what-why" className="mx-auto max-w-6xl px-4 py-16">
       <SectionBand letter="A" label="What & why" />
 
       <div className="grid gap-6 sm:grid-cols-2">

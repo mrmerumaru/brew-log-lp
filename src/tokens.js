@@ -1,25 +1,24 @@
-// Design tokens ported from marooj_coffee/src/tokens.js — palette and type
-// scale only. The app's content vocabularies (DRINKS, METHODS, etc.) don't
-// apply to a landing page and aren't copied.
+// Design tokens for the Coffea reskin — palette referenced from the Figma
+// community template "Coffea" by Codexse (CC BY 4.0), adapted to Brew Log's
+// app screenshots. The espresso/cream/caramel scheme replaces the app's
+// paper/green one for the landing page only.
 
-// amber (#C77D2E) fails WCAG AA as text almost everywhere: 2.91:1 on paper
-// (fails even the 3:1 large-text minimum) and 3.14:1 on card (clears 3:1 only
-// at large/bold sizes, still fails 4.5:1 for body text). Keep the exact app
-// hex value for brand consistency, but amber text is only ever used:
-//   - on `card`, at large/bold size (>=24px, or >=19px/600+ weight)
-//   - never on `paper` as text
-// Anywhere else, amber is icon fills / underlines / borders only, where
-// contrast ratio minimums don't apply.
+// Caramel (#C87832) fails WCAG AA as text almost everywhere (~2.2:1 on
+// espresso, ~2.5:1 on cream). Keep the exact hex for brand warmth, but caramel
+// is only ever used for icon fills / underlines / borders / decorative accents
+// — never as body text and never as a button background carrying text.
+// Buttons use espresso (dark) or ivory (light) fills with opposite text.
+// For readable warm text on dark, use accentLight.
 export const TOKENS = {
-  paper: "#F3F1EC",
-  card: "#FBFAF7",
-  ink: "#201D1A",
-  inkFaint: "#6B6558",
-  rule: "#D8D2C4",
-  green: "#2F5233",
-  greenSoft: "#E4EADF",
-  amber: "#C77D2E",
-  greenDeep: "#26421F",
+  paper: "#F0EBDD",        // warm cream — page background
+  card: "#FBF9F3",         // ivory — cards and surfaces lifted off the cream
+  ink: "#1C1C1C",          // charcoal — body text and headings
+  inkFaint: "#4A3527",     // coffee brown — muted / secondary text
+  rule: "#D3C6A7",         // sand — borders and rules
+  accent: "#C87832",       // caramel — icons/borders/accents only (see note)
+  accentLight: "#E0A15C",  // gold — readable warm text on dark backgrounds
+  espresso: "#2B1F1A",     // deep espresso — dark sections (hero, footer, CTA)
+  espressoDeep: "#191310", // near-black espresso — gradient ends / footer base
 };
 
 /**
@@ -33,6 +32,6 @@ export function applyTokens(root = document.documentElement) {
   }
 }
 
-export const SANS = "'Space Grotesk', sans-serif";
+export const SANS = "'Poppins', sans-serif";
+export const SERIF = "'Playfair Display', serif";
 export const MONO = "'IBM Plex Mono', monospace";
-export const SERIF = "'Source Serif 4', serif";

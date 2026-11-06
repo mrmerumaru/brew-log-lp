@@ -38,14 +38,14 @@ const STEPS = [
 
 export default function HowItWorks() {
   return (
-    <section id="how-it-works" className="mx-auto max-w-5xl px-4 py-16">
+    <section id="how-it-works" className="mx-auto max-w-6xl px-4 py-16">
       <SectionBand letter="C" label="How it works" />
 
       <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-5">
         {STEPS.map((step, index) => (
           <div key={step.title}>
             <div
-              className="overflow-hidden rounded border"
+              className="overflow-hidden rounded-2xl border"
               style={{ borderColor: 'var(--rule)' }}
             >
               <img src={step.image} alt={step.alt} className="block h-auto w-full" loading="lazy" />
@@ -53,7 +53,7 @@ export default function HowItWorks() {
             <div className="mt-3 flex items-center gap-2">
               <span
                 className="font-mono-band flex h-6 w-6 shrink-0 items-center justify-center text-xs font-semibold"
-                style={{ border: '1px solid var(--amber)', color: 'var(--ink)' }}
+                style={{ border: '1px solid var(--accent)', color: 'var(--ink)' }}
               >
                 {index + 1}
               </span>

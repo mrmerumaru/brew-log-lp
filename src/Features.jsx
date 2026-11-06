@@ -40,18 +40,18 @@ const FEATURES = [
 
 export default function Features() {
   return (
-    <section id="features" className="mx-auto max-w-5xl px-4 py-16">
+    <section id="features" className="mx-auto max-w-6xl px-4 py-16">
       <SectionBand letter="B" label="Features" />
 
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {FEATURES.map(({ icon: Icon, title, description }) => (
           <div
             key={title}
-            className="rounded p-6"
+            className="rounded-2xl p-6"
             style={{ background: 'var(--card)', border: '1px solid var(--rule)' }}
           >
-            <Icon size={24} style={{ color: 'var(--green)' }} />
-            <h3 className="mt-4 font-semibold">{title}</h3>
+            <Icon size={24} style={{ color: 'var(--accent)' }} />
+            <h3 className="mt-4 text-lg font-semibold">{title}</h3>
             <p className="mt-2 text-sm" style={{ color: 'var(--ink-faint)' }}>
               {description}
             </p>

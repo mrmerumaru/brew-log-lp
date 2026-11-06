@@ -3,16 +3,18 @@ const GITHUB_APP_REPO = 'https://github.com/mrmerumaru/brew-log'
 const INSTAGRAM_HANDLE = 'theonebrewlog'
 const CONTACT_EMAIL = 'theonebrewlog@gmail.com'
 
+const MUTED = 'color-mix(in srgb, var(--card) 78%, transparent)'
+
 export default function Footer() {
   return (
-    <footer id="footer" style={{ borderTop: '1px solid var(--rule)' }}>
-      <div className="mx-auto max-w-5xl px-4 py-12 grid gap-8 sm:grid-cols-3">
+    <footer id="footer" style={{ background: 'var(--espresso)', color: 'var(--card)' }}>
+      <div className="mx-auto max-w-6xl px-4 py-12 grid gap-8 sm:grid-cols-3">
         <div>
           <p className="font-semibold">Brew Log</p>
-          <p className="text-sm mt-2" style={{ color: 'var(--ink-faint)' }}>
+          <p className="text-sm mt-2" style={{ color: MUTED }}>
             A coffee consistency tracker.
           </p>
-          <p className="text-sm mt-4" style={{ color: 'var(--ink-faint)' }}>
+          <p className="text-sm mt-4" style={{ color: MUTED }}>
             © 2026 Meru Muhamadi.
           </p>
         </div>
@@ -47,7 +49,10 @@ export default function Footer() {
 
       <div
         className="text-center text-xs py-4 px-4"
-        style={{ borderTop: '1px solid var(--rule)', color: 'var(--ink-faint)' }}
+        style={{
+          borderTop: '1px solid color-mix(in srgb, var(--card) 15%, transparent)',
+          color: MUTED,
+        }}
       >
         Made with React, Vite and Supabase. Brew data is yours.
       </div>

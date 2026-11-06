@@ -13,12 +13,16 @@ const PLATFORMS = [
 
 export default function Install() {
   return (
-    <section id="install" className="mx-auto max-w-5xl px-4 py-16">
+    <section id="install" className="mx-auto max-w-6xl px-4 py-16">
       <SectionBand letter="D" label="Install" />
 
-      <div className="grid gap-10 sm:grid-cols-2">
+      <div className="grid gap-6 sm:grid-cols-2">
         {PLATFORMS.map((platform) => (
-          <div key={platform.name}>
+          <div
+            key={platform.name}
+            className="rounded-2xl p-6"
+            style={{ background: 'var(--card)', border: '1px solid var(--rule)' }}
+          >
             <h3 className="font-semibold">{platform.name}</h3>
             <ol
               className="mt-3 flex list-inside list-decimal flex-col gap-2 text-sm"
