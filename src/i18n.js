@@ -113,7 +113,7 @@ export const COPY = {
         {
           title: 'Log a brew',
           description:
-            "Fill the fields, hit Save. Under 60 seconds once you've done it twice.",
+            "Five steps — drink, beans, equipment, brew, taste. Save on the last one; under 60 seconds once you have done it twice.",
           alt: 'Brew Log form with drink and method fields, Latte selected',
           image: '/images/screenshots/02-log-a-brew.png',
         },
@@ -316,8 +316,8 @@ export const COPY = {
         {
           title: 'Catat seduhan',
           description:
-            'Isi kolomnya, tekan Simpan. Di bawah 60 detik setelah kamu lakukan dua kali.',
-          alt: 'Formulir Brew Log dengan kolom drink dan method, Latte terpilih',
+            'Lima langkah — minuman, biji, peralatan, seduh, rasa. Simpan di langkah terakhir; di bawah 60 detik setelah kamu lakukan dua kali.',
+          alt: 'Formulir Brew Log dengan kolom minuman dan metode, Latte terpilih',
           image: '/images/screenshots/02-log-a-brew-id.png',
         },
         {

@@ -57,12 +57,6 @@ export default function Nav() {
         </a>
 
         <div className="flex items-center gap-4 sm:gap-6">
-          {/* The nav is the one element that is always on screen, so the
-              language switch lives here rather than in a section — it stays
-              reachable at any scroll position, and matches where the app puts
-              its own EN | ID control. */}
-          <LanguageToggle dark={!scrolled} />
-
           <nav className="hidden items-center gap-6 sm:flex">
             {LINKS.map((link) => (
               <a key={link.href} href={link.href} className="text-sm" style={{ color: fg }}>
@@ -92,6 +86,18 @@ export default function Nav() {
           >
             {open ? <X size={24} /> : <Menu size={24} />}
           </button>
+
+          {/* The nav is the one element that is always on screen, so the
+              language switch lives here rather than in a section — it stays
+              reachable at any scroll position, and matches where the app puts
+              its own EN | ID control.
+
+              It is deliberately LAST in this row. The labels to its left change
+              length with the language ("How it works" is 86px, "Cara kerja" 73)
+              and the row is right-anchored to the container edge, so anything
+              after them gets dragged sideways on every tap. Pinned to the right
+              edge, the control holds still and only the links reflow. */}
+          <LanguageToggle dark={!scrolled} />
         </div>
       </div>
 
