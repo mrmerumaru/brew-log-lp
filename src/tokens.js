@@ -18,6 +18,7 @@ export const TOKENS = {
   accent: "#C87832",       // caramel — icons/borders/accents only (see note)
   accentLight: "#E0A15C",  // gold — readable warm text on dark backgrounds
   espresso: "#2B1F1A",     // deep espresso — dark sections (hero, footer, CTA)
+  espressoSoft: "#E7DFCC", // sand tint — active segment of the language pill
   espressoDeep: "#191310", // near-black espresso — gradient ends / footer base
 };
 

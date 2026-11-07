@@ -1,9 +1,13 @@
+import { useCopy } from './i18n.js'
+
 // A photo band between Features and How it works — the Coffea "best beans"
 // banner treatment, adapted to Brew Log. Cream background, editorial serif
 // headline on the left, coffee still on the right.
 const APP_URL = 'https://brew-log-xi.vercel.app/'
 
 export default function PhotoBand() {
+  const copy = useCopy()
+
   return (
     <section className="mx-auto max-w-6xl px-4 py-8">
       <div
@@ -12,18 +16,17 @@ export default function PhotoBand() {
       >
         <div className="p-8 lg:p-12">
           <h2 className="text-2xl font-semibold leading-snug sm:text-3xl">
-            Same beans, same method, better every time.
+            {copy.photoBand.title}
           </h2>
           <p className="mt-4 text-sm" style={{ color: 'var(--ink-faint)' }}>
-            Brew Log keeps the variables where you can see them — so the next
-            cup is a decision, not a guess.
+            {copy.photoBand.body}
           </p>
           <a
             href={APP_URL}
             className="mt-6 inline-block rounded-full px-6 py-3 text-sm font-semibold"
             style={{ background: 'var(--espresso)', color: 'var(--paper)' }}
           >
-            Start logging →
+            {copy.photoBand.cta}
           </a>
         </div>
         <div className="relative h-full min-h-[240px]">

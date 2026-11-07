@@ -1,8 +1,12 @@
+import { useCopy } from './i18n.js'
+
 const APP_URL = 'https://brew-log-xi.vercel.app/'
 
 // Closing CTA band — echoes the dark hero with a beans bleed on the right, in
 // the same slot the Coffea template uses for its newsletter band.
 export default function Cta() {
+  const copy = useCopy()
+
   return (
     <section id="get-started" className="relative overflow-hidden" style={{ background: 'var(--espresso)' }}>
       <img
@@ -24,13 +28,13 @@ export default function Cta() {
           className="text-xs font-semibold uppercase tracking-[0.3em]"
           style={{ color: 'var(--accent-light)' }}
         >
-          Ready when you are
+          {copy.cta.eyebrow}
         </p>
         <h2 className="mt-4 text-3xl font-bold sm:text-4xl" style={{ color: 'var(--card)' }}>
-          Brew better, cup after cup.
+          {copy.cta.title}
         </h2>
         <p className="mt-4 text-lg" style={{ color: 'color-mix(in srgb, var(--card) 78%, transparent)' }}>
-          Log your next brew in under a minute and see what's working.
+          {copy.cta.body}
         </p>
         <div className="mt-8 flex justify-center">
           <a
@@ -38,7 +42,7 @@ export default function Cta() {
             className="rounded-full px-8 py-3 font-semibold"
             style={{ background: 'var(--card)', color: 'var(--espresso)' }}
           >
-            Open the app →
+            {copy.cta.cta}
           </a>
         </div>
       </div>

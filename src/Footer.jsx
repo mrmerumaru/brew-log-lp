@@ -1,3 +1,5 @@
+import { useCopy } from './i18n.js'
+
 const APP_URL = 'https://brew-log-xi.vercel.app/'
 const GITHUB_APP_REPO = 'https://github.com/mrmerumaru/brew-log'
 const INSTAGRAM_HANDLE = 'theonebrewlog'
@@ -6,13 +8,15 @@ const CONTACT_EMAIL = 'theonebrewlog@gmail.com'
 const MUTED = 'color-mix(in srgb, var(--card) 78%, transparent)'
 
 export default function Footer() {
+  const copy = useCopy()
+
   return (
     <footer id="footer" style={{ background: 'var(--espresso)', color: 'var(--card)' }}>
       <div className="mx-auto max-w-6xl px-4 py-12 grid gap-8 sm:grid-cols-3">
         <div>
           <p className="font-semibold">Brew Log</p>
           <p className="text-sm mt-2" style={{ color: MUTED }}>
-            A coffee consistency tracker.
+            {copy.footer.tagline}
           </p>
           <p className="text-sm mt-4" style={{ color: MUTED }}>
             © 2026 Meru Muhamadi.
@@ -20,22 +24,22 @@ export default function Footer() {
         </div>
 
         <div>
-          <p className="font-semibold mb-2">Links</p>
+          <p className="font-semibold mb-2">{copy.footer.linksLabel}</p>
           <ul className="flex flex-col gap-2 text-sm">
             <li>
-              <a href={APP_URL}>Open the app</a>
+              <a href={APP_URL}>{copy.footer.openApp}</a>
             </li>
             <li>
-              <a href={GITHUB_APP_REPO}>GitHub repo</a>
+              <a href={GITHUB_APP_REPO}>{copy.footer.repo}</a>
             </li>
             <li>
-              <a href={`${GITHUB_APP_REPO}/issues/new`}>Report a bug</a>
+              <a href={`${GITHUB_APP_REPO}/issues/new`}>{copy.footer.bug}</a>
             </li>
           </ul>
         </div>
 
         <div>
-          <p className="font-semibold mb-2">Find me</p>
+          <p className="font-semibold mb-2">{copy.footer.findLabel}</p>
           <ul className="flex flex-col gap-2 text-sm">
             <li>
               <a href={`https://instagram.com/${INSTAGRAM_HANDLE}`}>@{INSTAGRAM_HANDLE}</a>
@@ -54,7 +58,7 @@ export default function Footer() {
           color: MUTED,
         }}
       >
-        Made with React, Vite and Supabase. Brew data is yours.
+        {copy.footer.bottom}
       </div>
     </footer>
   )

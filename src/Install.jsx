@@ -1,23 +1,15 @@
 import SectionBand from './SectionBand.jsx'
-
-const PLATFORMS = [
-  {
-    name: 'iOS',
-    steps: ['Open brew-log-xi.vercel.app in Safari.', 'Tap the Share icon.', 'Tap "Add to Home Screen".'],
-  },
-  {
-    name: 'Android',
-    steps: ['Open brew-log-xi.vercel.app in Chrome.', 'Tap the ⋮ menu.', 'Tap "Install app".'],
-  },
-]
+import { useCopy } from './i18n.js'
 
 export default function Install() {
+  const copy = useCopy()
+
   return (
     <section id="install" className="mx-auto max-w-6xl px-4 py-16">
-      <SectionBand letter="D" label="Install" />
+      <SectionBand letter="D" label={copy.install.label} />
 
       <div className="grid gap-6 sm:grid-cols-2">
-        {PLATFORMS.map((platform) => (
+        {copy.install.platforms.map((platform) => (
           <div
             key={platform.name}
             className="rounded-2xl p-6"
@@ -37,9 +29,7 @@ export default function Install() {
       </div>
 
       <p className="mt-10 text-sm" style={{ color: 'var(--ink-faint)' }}>
-        Installed, it opens in its own window, with its own icon, no browser
-        chrome. The brew data still lives in your Supabase account — sign in
-        once and the install is personal to you.
+        {copy.install.note}
       </p>
     </section>
   )

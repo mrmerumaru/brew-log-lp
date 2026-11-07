@@ -1,10 +1,15 @@
+import { useCopy } from './i18n.js'
+
 const APP_URL = 'https://brew-log-xi.vercel.app/'
 
-// Hero copy is verbatim from the README's opening (PRD §4.2.1) — the app's
-// voice has already committed to this wording. The dark full-bleed photo hero
-// is the Coffea template's signature move; the share-card mockup stays as the
-// "product shot" on the right.
+// Hero copy comes from the i18n bundle (English wording is verbatim from the
+// README's opening). The dark full-bleed photo hero is the Coffea template's
+// signature move; the share-card mockup stays as the "product shot" on the
+// right — it is a genuine render of the app's output, which is English-only,
+// so it stays in English in both languages.
 export default function Hero() {
+  const copy = useCopy()
+
   return (
     <section id="hero" className="relative overflow-hidden">
       <img
@@ -29,20 +34,19 @@ export default function Hero() {
               className="text-xs font-semibold uppercase tracking-[0.3em]"
               style={{ color: 'var(--accent-light)' }}
             >
-              Welcome
+              {copy.hero.eyebrow}
             </p>
             <h1
               className="mt-4 text-4xl font-bold leading-tight sm:text-5xl lg:text-6xl"
               style={{ color: 'var(--card)' }}
             >
-              A coffee consistency tracker.
+              {copy.hero.title}
             </h1>
             <p
               className="mt-6 text-lg"
               style={{ color: 'color-mix(in srgb, var(--card) 82%, transparent)' }}
             >
-              Log every variable of a brew, attach a photo of the cup, and look
-              back at what produced your best results.
+              {copy.hero.body}
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <a
@@ -50,7 +54,7 @@ export default function Hero() {
                 className="rounded-full px-7 py-3 font-semibold"
                 style={{ background: 'var(--card)', color: 'var(--espresso)' }}
               >
-                Open the app →
+                {copy.hero.cta}
               </a>
               <a
                 href="#how-it-works"
@@ -60,7 +64,7 @@ export default function Hero() {
                   color: 'var(--card)',
                 }}
               >
-                How it works
+                {copy.hero.secondary}
               </a>
             </div>
           </div>
